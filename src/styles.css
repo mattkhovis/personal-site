@@ -222,6 +222,27 @@ strong { font-weight: 600; }
   content: ""; display: block; width: 168px; height: 8px; margin-top: 20px;
   background: linear-gradient(90deg, var(--blue) 0 46%, transparent 46% 50%, var(--red) 50% 74%, transparent 74% 78%, var(--yellow) 78% 100%);
 }
+.hero__id { display: flex; align-items: center; gap: clamp(16px, 2.6vw, 32px); margin: 22px 0 22px; }
+.hero__id .hero__title { margin: 0; }
+.portrait {
+  --c: 14px;
+  position: relative; flex: none; margin: 0; width: clamp(104px, 19vw, 236px); aspect-ratio: 1;
+  padding: 6px; isolation: isolate;
+  background: var(--line-strong);
+  clip-path: polygon(var(--c) 0, 100% 0, 100% calc(100% - var(--c)), calc(100% - var(--c)) 100%, 0 100%, 0 var(--c));
+}
+.portrait::before {
+  content: ""; position: absolute; inset: 1px; z-index: -1; background: var(--surface);
+  clip-path: polygon(calc(var(--c) - .4px) 0, 100% 0, 100% calc(100% - var(--c) + .4px), calc(100% - var(--c) + .4px) 100%, 0 100%, 0 calc(var(--c) - .4px));
+}
+.portrait::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px;
+  background: linear-gradient(90deg, var(--blue) 0 46%, var(--red) 46% 74%, var(--yellow) 74% 100%);
+}
+.portrait img {
+  width: 100%; height: 100%; object-fit: cover;
+  clip-path: polygon(calc(var(--c) - 6px) 0, 100% 0, 100% calc(100% - var(--c) + 4px), calc(100% - var(--c) + 4px) 100%, 0 100%, 0 calc(var(--c) - 6px));
+}
 .hero__sub { font: 500 clamp(19px, 2vw, 23px)/1.4 var(--sans); max-width: 34ch; margin-bottom: 18px; }
 .lede { font-size: 16.5px; line-height: 1.65; color: var(--ink-2); max-width: 60ch; margin-bottom: 28px; }
 .lede strong { color: var(--ink); }
