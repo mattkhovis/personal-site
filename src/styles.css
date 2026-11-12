@@ -337,6 +337,7 @@ strong { font-weight: 600; }
   .spec__rows { grid-template-columns: 1fr 1fr; }
   .spec__rows > div:nth-child(odd) { border-right: 1px solid var(--line); }
   .spec__rows > div:nth-last-child(2):nth-child(odd) { border-bottom: 0; }
+  .spec__rows > div:last-child:nth-child(odd) { grid-column: 1 / -1; border-right: 0; }
 }
 .spec__rows--single { grid-template-columns: 1fr !important; border: 1px solid var(--line); background: var(--surface); }
 .spec__rows--single > div { border-right: 0 !important; border-bottom: 1px solid var(--line) !important; grid-template-columns: 150px 1fr; }
