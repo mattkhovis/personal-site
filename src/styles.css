@@ -513,6 +513,14 @@ strong { font-weight: 600; }
 .photo figcaption .chart__no { margin: 0; }
 @media (min-width: 900px) { .photo { max-width: 400px; justify-self: end; } }
 
+.interests { border: 1px solid var(--line); background: var(--surface); }
+.interests li {
+  display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-bottom: 1px solid var(--line);
+  font: 500 13px/1.4 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink);
+}
+.interests li:last-child { border-bottom: 0; }
+.interests li::before { content: ""; width: 4px; height: 14px; flex: none; background: var(--blue); }
+
 /* ---------- Comms ---------- */
 .comms { border-top: 2px solid var(--ink); }
 .comms a {
