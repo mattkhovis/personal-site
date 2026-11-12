@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+  Source for src/og-image.png (link preview card, 1200x630).
+  Re-render:
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars \
+    --window-size=1200,630 --virtual-time-budget=6000 \
+    --screenshot=src/og-image.png "file://$PWD/design/og-image.html"
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@500&display=block" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0f16; --surface: #111722; --plate: #161e2b; --ink: #e7ebf1; --ink-2: #b3bccb; --muted: #8590a3;
+    --line: #243044; --line-strong: #3b4a63; --grid: rgba(91, 156, 240, 0.07);
+    --blue: #2f6fd4; --red: #d03b36; --yellow: #f2b705;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--bg); color: var(--ink); }
+  body {
+    font-family: "IBM Plex Sans", sans-serif; position: relative;
+    background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 32px 32px; background-position: -1px -1px;
+  }
+  .frame { position: absolute; inset: 28px; border: 1px solid var(--line); }
+  .frame::before, .frame::after { content: ""; position: absolute; width: 26px; height: 26px; border: solid var(--blue); }
+  .frame::before { left: -1px; bottom: -1px; border-width: 0 0 3px 3px; }
+  .frame::after { right: -1px; top: -1px; border-width: 3px 3px 0 0; }
+  .mono { font: 500 15px/1 "IBM Plex Mono", monospace; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .left { position: absolute; left: 76px; top: 76px; width: 620px; }
+  .designation { display: flex; align-items: center; gap: 16px; color: var(--ink-2); }
+  .code { background: var(--red); color: #fff; padding: 7px 11px 6px; font-weight: 600; letter-spacing: 0.12em;
+    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px); }
+  h1 { font: 700 144px/0.84 "Barlow Condensed", sans-serif; text-transform: uppercase; margin: 26px 0 0; letter-spacing: 0.005em; }
+  .stripe { width: 210px; height: 10px; margin-top: 22px;
+    background: linear-gradient(90deg, var(--blue) 0 46%, transparent 46% 50%, var(--red) 50% 74%, transparent 74% 78%, var(--yellow) 78% 100%); }
+  .sub { font: 500 29px/1.3 "IBM Plex Sans", sans-serif; margin-top: 24px; max-width: 600px; }
+
+  .fig { position: absolute; right: 76px; top: 76px; width: 340px; border: 1px solid var(--line); background: rgba(17, 23, 34, 0.92); }
+  .fig__cap { display: flex; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+  .fig__cap b { color: var(--ink); font-weight: 600; }
+  .mods { padding: 18px 18px 20px; display: grid; gap: 15px; }
+  .mod { --c: 10px; position: relative; isolation: isolate; height: 54px; display: flex; flex-direction: column; justify-content: center; padding-left: 30px;
+    background: var(--line-strong);
+    clip-path: polygon(var(--c) 0, calc(100% - var(--c)) 0, 100% var(--c), 100% calc(100% - var(--c)), calc(100% - var(--c)) 100%, var(--c) 100%, 0 calc(100% - var(--c)), 0 var(--c)); }
+  .mod::after { content: ""; position: absolute; inset: 1px; z-index: -1; background: var(--plate);
+    clip-path: polygon(calc(var(--c) - .4px) 0, calc(100% - var(--c) + .4px) 0, 100% calc(var(--c) - .4px), 100% calc(100% - var(--c) + .4px), calc(100% - var(--c) + .4px) 100%, calc(var(--c) - .4px) 100%, 0 calc(100% - var(--c) + .4px), 0 calc(var(--c) - .4px)); }
+  .mod::before { content: ""; position: absolute; left: 11px; top: 11px; bottom: 11px; width: 7px; background: var(--blue);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 6px)); }
+  .mod.red::before { background: var(--red); } .mod.yellow::before { background: var(--yellow); }
+  .mod span { font: 500 10px/1 "IBM Plex Mono", monospace; letter-spacing: 0.08em; color: var(--muted); }
+  .mod strong { font: 600 22px/1.05 "Barlow Condensed", sans-serif; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 4px; }
+
+  .foot { position: absolute; left: 76px; right: 76px; bottom: 56px; display: flex; justify-content: space-between; align-items: center; color: var(--muted); }
+  .foot .url { color: var(--ink); font-weight: 600; font-size: 18px; }
+  .hazard { display: inline-block; width: 34px; height: 12px; margin-right: 12px; vertical-align: -1px;
+    background: repeating-linear-gradient(-45deg, var(--yellow) 0 5px, #11151c 5px 10px); }
+</style>
+</head>
+<body>
+  <div class="frame"></div>
+
+  <div class="left">
+    <p class="designation mono"><span class="code">MH-26</span><span>Developer / Business analyst</span></p>
+    <h1>Matt<br>Hovis</h1>
+    <div class="stripe"></div>
+    <p class="sub">I love taking an idea and turning it into something people use.</p>
+  </div>
+
+  <div class="fig">
+    <p class="fig__cap mono"><b>Fig. 1</b><span>Delivery frame</span></p>
+    <div class="mods">
+      <div class="mod"><span>MOD-01</span><strong>Requirements</strong></div>
+      <div class="mod"><span>MOD-02</span><strong>Plan</strong></div>
+      <div class="mod red"><span>MOD-03</span><strong>Agent build</strong></div>
+      <div class="mod yellow"><span>MOD-04</span><strong>Review + test</strong></div>
+      <div class="mod"><span>MOD-05</span><strong>Merge</strong></div>
+    </div>
+  </div>
+
+  <div class="foot mono">
+    <span><i class="hazard"></i>Atlanta, GA</span>
+    <span class="url">matthovis.io</span>
+  </div>
+</body>
+</html>
