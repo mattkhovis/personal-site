@@ -90,7 +90,7 @@
       }
       var v = days[k];
       var lvl = v === 0 ? 0 : v <= 5 ? 1 : v <= 20 ? 2 : v <= 60 ? 3 : 4;
-      var r = el('rect', { x: left + col * step, y: top + row * step, width: cell, height: cell, rx: 2.5, class: 'h' + lvl }, svg);
+      var r = el('rect', { x: left + col * step, y: top + row * step, width: cell, height: cell, rx: 1, class: 'h' + lvl }, svg);
       r.addEventListener('mouseenter', function () {
         var label = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'UTC' });
         tip.show('<b>' + fmt.format(v) + ' contribution' + (v === 1 ? '' : 's') + '</b>' + label, r);

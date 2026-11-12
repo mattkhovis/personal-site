@@ -1,0 +1,31 @@
+{#- Fig. 1: delivery frame. An original schematic in the style of a model-kit manual. -#}
+{%- set mods = [
+  { id: "01", name: "Requirements", note: "RTMs, root cause, production data", acc: "blue" },
+  { id: "02", name: "Plan", note: "Written plan and definition of done", acc: "blue", gate: "Approval gate" },
+  { id: "03", name: "Agent build", note: "Claude Code, 21 custom agents", acc: "red" },
+  { id: "04", name: "Review + test", note: "Every diff read, 124k lines of tests", acc: "yellow", gate: "Acceptance test" },
+  { id: "05", name: "Merge", note: "1,192 merged, 2.6 h median", acc: "blue" }
+] -%}
+<figure class="fig1" aria-labelledby="fig1-cap">
+  <figcaption class="fig1__cap" id="fig1-cap">
+    <span class="fig1__no">Fig. 1</span>
+    <span>Delivery frame / MH-26</span>
+    <span class="fig1__rev">Rev 2026.11</span>
+  </figcaption>
+  <div class="fig1__body">
+    <p class="fig1__dim" aria-hidden="true"><span>Ticket → production</span></p>
+    <ol class="frame">
+      {%- for m in mods %}
+      <li class="mod mod--{{ m.acc }}">
+        <div class="mod__plate">
+          <span class="mod__id">MOD-{{ m.id }}</span>
+          <span class="mod__name">{{ m.name }}</span>
+          <span class="mod__hw" aria-hidden="true">{{ m.id }}</span>
+        </div>
+        <p class="mod__note">{{ m.note }}</p>
+        {%- if m.gate %}<p class="mod__gate">{{ m.gate }}</p>{% endif %}
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</figure>

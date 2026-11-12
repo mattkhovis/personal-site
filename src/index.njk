@@ -6,47 +6,74 @@ charts: true
 ---
 {%- set months = { "01": "Jan", "02": "Feb", "03": "Mar", "04": "Apr", "05": "May", "06": "Jun", "07": "Jul", "08": "Aug", "09": "Sep", "10": "Oct", "11": "Nov", "12": "Dec" } -%}
 
-<section class="hero">
-  <div class="wrap">
-    <p class="eyebrow">Atlanta, GA</p>
-    <h1 class="hero__title">Matt Hovis</h1>
-    <p class="hero__sub">Developer and business analyst. I build production software with AI coding agents.</p>
-    <div class="hero__body">
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap hero__grid">
+    <div class="hero__main">
+      <p class="designation">
+        <span class="designation__code">MH-26</span>
+        <span>Developer / Business analyst</span>
+        <span class="designation__loc">Atlanta, GA</span>
+      </p>
+      <h1 class="hero__title" id="hero-h">Matt Hovis</h1>
+      <p class="hero__sub">Developer and business analyst. I build production software with AI coding agents.</p>
       <p class="lede">
         I joined a B2B SaaS company in support in 2022, became a business analyst in 2023, and started writing code
         in February 2026. Since then I have merged <strong>1,192 pull requests</strong> in 16 repositories.
         AI agents write most of the code. I plan each change, review it, test it, and merge it.
       </p>
-      <div class="hero__cta">
-        <a class="btn btn--solid" href="#work">Work</a>
+      <div class="cta">
+        <a class="btn btn--primary" href="#work">Case files</a>
         <a class="btn" href="#contact">Contact</a>
       </div>
     </div>
+    <div class="hero__fig">
+      {% include "schematic.njk" %}
+    </div>
+  </div>
 
-    <dl class="kpis">
-      <div class="kpi"><dt>Pull requests merged</dt><dd>1,192</dd><p>of 1,395 opened, Feb – Nov 2026</p></div>
-      <div class="kpi"><dt>Lines merged</dt><dd>660k</dd><p>+660,728 added, −103,946 removed</p></div>
-      <div class="kpi"><dt>Lines of test code</dt><dd>124k</dd><p>in 1,347 test files</p></div>
-      <div class="kpi"><dt>Median open to merge</dt><dd>2.6<small>h</small></dd><p>main product repository</p></div>
-    </dl>
+  <div class="wrap">
+    <section class="spec" aria-labelledby="spec-h">
+      <header class="spec__head">
+        <h2 id="spec-h">General specifications</h2>
+        <span>Unit MH-26 · as of 12 Nov 2026</span>
+      </header>
+      <dl class="spec__gauges">
+        <div class="gauge"><dt>Pull requests merged</dt><dd>1,192</dd><p>of 1,395 opened</p></div>
+        <div class="gauge"><dt>Lines merged</dt><dd>660k</dd><p>+660,728 / −103,946</p></div>
+        <div class="gauge"><dt>Test code</dt><dd>124k</dd><p>lines in 1,347 files</p></div>
+        <div class="gauge"><dt>Median open → merge</dt><dd>2.6<small>h</small></dd><p>main product repository</p></div>
+      </dl>
+      <dl class="spec__rows">
+        <div><dt>In service</dt><dd>SaaS since Apr 2022 · code since Feb 2026</dd></div>
+        <div><dt>Repositories</dt><dd>16, across work, collaborations, and personal</dd></div>
+        <div><dt>Primary stack</dt><dd>PHP · Laravel · Vue · TypeScript · Swift · SQL</dd></div>
+        <div><dt>Tooling</dt><dd>Claude Code · GitHub · Jira · Confluence</dd></div>
+        <div><dt>Prior role</dt><dd>Business analyst: requirements, UAT, releases, go-lives</dd></div>
+        <div><dt>Certifications</dt><dd>SQL · Atlassian Jira and Confluence</dd></div>
+      </dl>
+    </section>
   </div>
 </section>
 
-<section class="section section--tint" id="work" aria-labelledby="work-h">
+<section class="section" id="work" aria-labelledby="work-h">
   <div class="wrap">
-    <header class="section__head">
-      <p class="section__num">01</p>
+    <header class="sec-head">
+      <p class="sec-head__tag"><span class="sec-head__num">02</span>Case files</p>
       <h2 id="work-h">Selected work</h2>
-      <p class="section__intro">2026, on a repair and service-management platform for retail chains. Client names are left out.</p>
+      <p class="sec-head__intro">2026, on a repair and service-management platform for retail chains. Client names are left out.</p>
     </header>
     <div class="cases">
       {% for c in work %}
-      <article class="case">
-        <p class="case__meta"><span>{{ c.tag }}</span><span>{{ c.when }}</span></p>
+      <article class="case panel">
+        <header class="case__bar">
+          <span class="case__id">CF-{{ "0" if loop.index < 10 }}{{ loop.index }}</span>
+          <span class="case__tag">{{ c.tag }}</span>
+          <span class="case__when">{{ c.when }}</span>
+        </header>
         <h3 class="case__title">{{ c.title }}</h3>
         <dl class="case__body">
           <dt>Problem</dt><dd>{{ c.problem }}</dd>
-          <dt>What I did</dt><dd>{{ c.did }}</dd>
+          <dt>Action</dt><dd>{{ c.did }}</dd>
           <dt>Result</dt><dd class="case__result">{{ c.result }}</dd>
         </dl>
         <ul class="chips" aria-label="Stack">{% for s in c.stack %}<li>{{ s }}</li>{% endfor %}</ul>
@@ -56,16 +83,17 @@ charts: true
   </div>
 </section>
 
-<section class="section" id="code" aria-labelledby="code-h">
+<section class="section section--alt" id="code" aria-labelledby="code-h">
   <div class="wrap">
-    <header class="section__head">
-      <p class="section__num">02</p>
+    <header class="sec-head">
+      <p class="sec-head__tag"><span class="sec-head__num">03</span>Telemetry</p>
       <h2 id="code-h">2026 in code</h2>
-      <p class="section__intro">From GitHub. My first commit was on 3 February 2026. Most of the repositories are private.</p>
+      <p class="sec-head__intro">From GitHub. My first commit was on 3 February 2026. Most of the repositories are private.</p>
     </header>
 
-    <figure class="chart" id="heatmap-fig">
-      <figcaption>
+    <figure class="chart panel" id="heatmap-fig">
+      <figcaption class="chart__cap">
+        <span class="chart__no">Fig. 2</span>
         <h3>Contributions per day</h3>
         <p>Commits, pull requests, and reviews. 3,263 in 2026, on 192 days.</p>
       </figcaption>
@@ -76,8 +104,9 @@ charts: true
     </figure>
 
     <div class="chart-row">
-      <figure class="chart" id="months-fig">
-        <figcaption>
+      <figure class="chart panel" id="months-fig">
+        <figcaption class="chart__cap">
+          <span class="chart__no">Fig. 3</span>
           <h3>Pull requests opened per month</h3>
           <p>By where the work lives.</p>
         </figcaption>
@@ -100,8 +129,9 @@ charts: true
         </details>
       </figure>
 
-      <figure class="chart" id="langs-fig">
-        <figcaption>
+      <figure class="chart panel" id="langs-fig">
+        <figcaption class="chart__cap">
+          <span class="chart__no">Fig. 4</span>
           <h3>Lines added by language</h3>
           <p>Merged pull requests, code files only. A minimum: counts read the first 100 files of each PR.</p>
         </figcaption>
@@ -116,28 +146,28 @@ charts: true
       </figure>
     </div>
 
-    <ul class="facts">
-      <li><strong>19 days</strong> in a row with a merged PR, 29 June to 17 July</li>
-      <li><strong>83 merges</strong> on the busiest day, 17 September</li>
-      <li><strong>417 tickets</strong> named in pull request titles on the main product</li>
-      <li><strong>3,582 commits</strong> across 11,821 changed files</li>
+    <ul class="readouts">
+      <li><span class="readouts__k">Streak</span><strong>19 days</strong><span>in a row with a merged PR, 29 Jun – 17 Jul</span></li>
+      <li><span class="readouts__k">Peak day</span><strong>83 merges</strong><span>on 17 September</span></li>
+      <li><span class="readouts__k">Tickets</span><strong>417</strong><span>named in PR titles on the main product</span></li>
+      <li><span class="readouts__k">Commits</span><strong>3,582</strong><span>across 11,821 changed files</span></li>
     </ul>
   </div>
   <script type="application/json" id="stats-data">{{ stats | dump | safe }}</script>
 </section>
 
-<section class="section section--tint" id="projects" aria-labelledby="projects-h">
+<section class="section" id="projects" aria-labelledby="projects-h">
   <div class="wrap">
-    <header class="section__head">
-      <p class="section__num">03</p>
+    <header class="sec-head">
+      <p class="sec-head__tag"><span class="sec-head__num">04</span>Hangar</p>
       <h2 id="projects-h">Side projects</h2>
     </header>
     <div class="projects">
       {% for p in projects %}
-      <article class="project{% if p.featured %} project--featured{% endif %}">
-        <p class="project__kind">{{ p.kind }}</p>
+      <article class="project panel{% if p.featured %} project--featured{% endif %}">
+        <p class="project__bar"><span>Unit {{ "0" if loop.index < 10 }}{{ loop.index }}</span><span>{{ p.kind }}</span></p>
         <h3>{{ p.name }}</h3>
-        <p>{{ p.blurb }}</p>
+        <p class="project__blurb">{{ p.blurb }}</p>
         <ul class="chips" aria-label="Stack">{% for s in p.stack %}<li>{{ s }}</li>{% endfor %}</ul>
         {% if p.links.length %}
         <p class="project__links">{% for l in p.links %}<a href="{{ l.href }}"{% if l.href.startsWith('http') %} rel="noopener"{% endif %}>{{ l.label }} <span aria-hidden="true">→</span></a>{% endfor %}</p>
@@ -148,19 +178,20 @@ charts: true
   </div>
 </section>
 
-<section class="section" id="career" aria-labelledby="career-h">
+<section class="section section--alt" id="career" aria-labelledby="career-h">
   <div class="wrap">
-    <header class="section__head">
-      <p class="section__num">04</p>
+    <header class="sec-head">
+      <p class="sec-head__tag"><span class="sec-head__num">05</span>Service record</p>
       <h2 id="career-h">Career</h2>
     </header>
-    <ol class="timeline">
+    <ol class="record">
       {% for j in career %}
-      <li class="timeline__item">
-        <p class="timeline__when">{{ j.when }}</p>
-        <div>
+      <li class="record__item{% if loop.first %} is-current{% endif %}">
+        <p class="record__rev">Rev {{ "0" if (career.length - loop.index0) < 10 }}{{ career.length - loop.index0 }}</p>
+        <p class="record__when">{{ j.when }}</p>
+        <div class="record__body">
           <h3>{{ j.role }}</h3>
-          <p class="timeline__org">{{ j.org }}</p>
+          <p class="record__org">{{ j.org }}</p>
           <p>{{ j.body }}</p>
         </div>
       </li>
@@ -177,36 +208,40 @@ charts: true
   </div>
 </section>
 
-<section class="section section--tint" id="about" aria-labelledby="about-h">
+<section class="section" id="about" aria-labelledby="about-h">
   <div class="wrap about">
     <div>
-      <header class="section__head section__head--tight">
-        <p class="section__num">05</p>
+      <header class="sec-head">
+        <p class="sec-head__tag"><span class="sec-head__num">06</span>Operator</p>
         <h2 id="about-h">Outside work</h2>
       </header>
-      <ul class="interests">
-        <li><strong>Video games.</strong> RPGs and retro games.</li>
-        <li><strong>Comics and manga.</strong> Superhero, indie, and slice-of-life.</li>
-        <li><strong>Gunpla.</strong> Model kits, built and panel-lined.</li>
-        <li><strong>Baseball.</strong> Atlanta Braves.</li>
-      </ul>
+      <dl class="spec__rows spec__rows--single">
+        <div><dt>Video games</dt><dd>RPGs and retro games</dd></div>
+        <div><dt>Comics and manga</dt><dd>Superhero, indie, and slice-of-life</dd></div>
+        <div><dt>Gunpla</dt><dd>Model kits, built and panel-lined</dd></div>
+        <div><dt>Baseball</dt><dd>Atlanta Braves</dd></div>
+      </dl>
     </div>
-    <figure class="about__photo">
-      <img src="/gunpla-sm.jpg" alt="A finished Gunpla model kit on display" loading="lazy" width="900" height="1200" />
-      <figcaption>One of my Gunpla builds.</figcaption>
+    <figure class="photo">
+      <div class="photo__frame">
+        <img src="/gunpla-sm.jpg" alt="A finished white, blue, and red model kit standing next to a tabby cat" loading="lazy" width="900" height="1200" />
+      </div>
+      <figcaption><span class="chart__no">Fig. 5</span> A finished kit, and my cat.</figcaption>
     </figure>
   </div>
 </section>
 
-<section class="section contact" id="contact" aria-labelledby="contact-h">
+<section class="section section--alt" id="contact" aria-labelledby="contact-h">
   <div class="wrap">
-    <p class="section__num">06</p>
-    <h2 id="contact-h" class="contact__title">Contact</h2>
-    <p class="lede">Email is the best way to reach me.</p>
-    <div class="hero__cta">
-      <a class="btn btn--solid" href="mailto:matt.hovis@icloud.com">matt.hovis@icloud.com</a>
-      <a class="btn" href="https://www.linkedin.com/in/matthewkhovis" rel="noopener">LinkedIn</a>
-      <a class="btn" href="https://github.com/mattkhovis" rel="noopener">GitHub</a>
-    </div>
+    <header class="sec-head">
+      <p class="sec-head__tag"><span class="sec-head__num">07</span>Comms</p>
+      <h2 id="contact-h">Contact</h2>
+      <p class="sec-head__intro">Email is the best way to reach me.</p>
+    </header>
+    <ul class="comms">
+      <li><a href="mailto:matt.hovis@icloud.com"><span class="comms__ch">CH-1</span><span class="comms__k">Email</span><span class="comms__v">matt.hovis@icloud.com</span><span class="comms__go" aria-hidden="true">→</span></a></li>
+      <li><a href="https://www.linkedin.com/in/matthewkhovis" rel="noopener"><span class="comms__ch">CH-2</span><span class="comms__k">LinkedIn</span><span class="comms__v">in/matthewkhovis</span><span class="comms__go" aria-hidden="true">→</span></a></li>
+      <li><a href="https://github.com/mattkhovis" rel="noopener"><span class="comms__ch">CH-3</span><span class="comms__k">GitHub</span><span class="comms__v">mattkhovis</span><span class="comms__go" aria-hidden="true">→</span></a></li>
+    </ul>
   </div>
 </section>
