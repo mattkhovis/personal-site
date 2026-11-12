@@ -5,7 +5,7 @@ module.exports = [
     role: "Developer and Business Analyst",
     org: "B2B SaaS, repair and service management",
     body:
-      "Formed a team with experienced app builders and started writing code. Since February I have shipped features, production fixes, and much of a platform rebuild: 1,192 merged pull requests in 16 repositories.",
+      "Formed a team with experienced app builders and started writing code. Since February I have shipped features, production fixes, and much of a platform rebuild: 1,192 merged pull requests across 13 repositories.",
   },
   {
     when: "2023 – 2026",

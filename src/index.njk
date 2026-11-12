@@ -67,7 +67,7 @@ charts: true
         <div class="gauge"><dt>Median open → merge</dt><dd>2.6<small>h</small></dd><p>main product repository</p></div>
       </dl>
       <dl class="spec__rows">
-        <div><dt>Repositories</dt><dd>16, across work, collaborations, and personal</dd></div>
+        <div><dt>Repositories</dt><dd>13 with merged work, across work, collaborations, and personal</dd></div>
         <div><dt>Primary stack</dt><dd>PHP · Laravel · Vue · TypeScript · Swift · SQL</dd></div>
         <div><dt>Tooling</dt><dd>Claude Code · GitHub · Jira · Confluence</dd></div>
         <div><dt>Prior role</dt><dd>Business analyst: requirements, UAT, releases, go-lives</dd></div>
@@ -123,6 +123,16 @@ charts: true
       <div class="heat-legend" aria-hidden="true">
         <span>Less</span><i class="h0"></i><i class="h1"></i><i class="h2"></i><i class="h3"></i><i class="h4"></i><span>More</span>
       </div>
+      <details class="table-view">
+        <summary>Show as table</summary>
+        <table>
+          <thead><tr><th scope="col">Month</th><th scope="col">Contributions</th><th scope="col">Active days</th><th scope="col">Busiest day</th></tr></thead>
+          <tbody>
+            {% for m in contribMonths %}<tr><th scope="row">{{ m.month }}</th><td>{{ m.total }}</td><td>{{ m.activeDays }}</td><td>{{ m.peak }}</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </details>
     </figure>
 
     <div class="chart-row">

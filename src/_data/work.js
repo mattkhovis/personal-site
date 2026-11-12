@@ -8,7 +8,7 @@ module.exports = [
     problem:
       "The manufacturer rejected repair status updates, and our system resent them without limit. In 7 days, 2,241 of 2,873 calls failed (78%). One ticket sent 161 calls in 4.8 days.",
     did:
-      "Found the cause: a rejected update forced a rollback, the rollback left the inbound queue message open, and the queue delivered it again. Replaced a five-part fix with one check: retry only on known temporary faults.",
+      "Found the cause: a rejected update forced a rollback, the rollback left the inbound queue message open, and the queue delivered it again. Fixed it with one check, in place of the five separate defenses in my earlier draft: retry only on known temporary faults.",
     result: "A rejected update is now recorded once and the ticket saves.",
     stack: ["PHP", "Message queues", "Root-cause analysis"],
   },
