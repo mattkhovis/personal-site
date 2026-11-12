@@ -5,14 +5,14 @@ module.exports = [
     role: "Developer and Business Analyst",
     org: "B2B SaaS, repair and service management",
     body:
-      "Formed a team with experienced app builders and started writing code. Since February I have shipped features, production fixes, and much of a platform rebuild: 1,192 merged pull requests across 13 repositories.",
+      "Now I build the work I used to write up. Since February I have shipped features, production fixes, and much of a platform rebuild: 1,192 merged pull requests across 13 repositories.",
   },
   {
     when: "2023 – 2026",
     role: "Business Analyst",
     org: "B2B SaaS, repair and service management",
     body:
-      "Wrote requirements and traceability matrices. Ran releases, go-lives, and post-launch support for retail and tech clients, including launches in Canada, France, and Japan, a payment-processor certification, and 15 production deployments in 2025.",
+      "Turned what retail and tech clients asked for into requirements and tickets developers could build. Then saw it through: releases, go-lives in Canada and France, a server move in Japan, a payment-processor certification, and 15 production deployments in 2025.",
   },
   {
     when: "2022 – 2023",
