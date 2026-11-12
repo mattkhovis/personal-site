@@ -309,7 +309,7 @@ strong { font-weight: 600; }
 }
 
 /* ---------- Spec sheet ---------- */
-.spec { margin-top: clamp(40px, 6vw, 72px); border: 1px solid var(--line); background: var(--surface); }
+.spec { margin-top: clamp(40px, 6vw, 64px); border: 1px solid var(--line); background: var(--surface); }
 .spec__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 16px; padding: 10px 16px; background: var(--head-bg); color: var(--head-ink); border-bottom: 2px solid var(--blue); }
 .spec__head h2 { font: 600 18px/1 var(--display); text-transform: uppercase; letter-spacing: 0.12em; }
 .spec__head span { opacity: 0.75; }
@@ -342,6 +342,21 @@ strong { font-weight: 600; }
 .spec__rows--single { grid-template-columns: 1fr !important; border: 1px solid var(--line); background: var(--surface); }
 .spec__rows--single > div { border-right: 0 !important; border-bottom: 1px solid var(--line) !important; grid-template-columns: 150px 1fr; }
 .spec__rows--single > div:last-child { border-bottom: 0 !important; }
+
+/* ---------- Story ---------- */
+.story { display: grid; border-top: 2px solid var(--ink); max-width: 980px; }
+.chapter { display: grid; gap: 10px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+.chapter p:last-child { font-size: clamp(17px, 1.6vw, 19px); line-height: 1.65; color: var(--ink-2); max-width: 64ch; }
+.chapter p:last-child strong { color: var(--ink); }
+.chapter__mark { display: flex; align-items: baseline; gap: 12px; }
+.chapter__year { font: 700 clamp(34px, 4vw, 44px)/1 var(--display); color: var(--ink); letter-spacing: 0.02em; text-transform: uppercase; }
+.chapter__label { font: 500 11px/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.chapter--now .chapter__year { color: var(--red); }
+.chapter--now p:last-child { color: var(--ink); font-weight: 500; }
+@media (min-width: 760px) {
+  .chapter { grid-template-columns: 200px 1fr; gap: 32px; padding: 28px 0; }
+  .chapter__mark { flex-direction: column; gap: 8px; }
+}
 
 /* ---------- Sections ---------- */
 .section { padding: clamp(56px, 8vw, 104px) 0; border-top: 1px solid var(--line); --cut: var(--bg); }

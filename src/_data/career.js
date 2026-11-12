@@ -5,7 +5,7 @@ module.exports = [
     role: "Developer and Business Analyst",
     org: "B2B SaaS, repair and service management",
     body:
-      "First commit on 3 February 2026. 1,192 merged pull requests in 16 repositories, on the current platform and its rebuild. AI agents write most of the code. I plan, review, test, and merge each change.",
+      "Formed a team with experienced app builders and started writing code. Since February I have shipped features, production fixes, and much of a platform rebuild: 1,192 merged pull requests in 16 repositories.",
   },
   {
     when: "2023 – 2026",
