@@ -1,0 +1,18 @@
+---
+pagination:
+  data: redirects
+  size: 1
+  alias: r
+permalink: "{{ r.from }}index.html"
+redirects:
+  - { from: "/professional/", to: "/#career" }
+  - { from: "/work/ai-assisted-defect-resolution/", to: "/#work" }
+  - { from: "/work/workflow-standardization-and-uat/", to: "/#work" }
+  - { from: "/work/operations-rollout-and-scale/", to: "/#career" }
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Moved</title>
+<meta name="robots" content="noindex"><link rel="canonical" href="https://matthovis.io{{ r.to }}">
+<meta http-equiv="refresh" content="0; url={{ r.to }}"></head>
+<body><p>This page moved to <a href="{{ r.to }}">matthovis.io{{ r.to }}</a>.</p></body></html>

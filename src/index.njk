@@ -1,202 +1,246 @@
 ---
 layout: base.njk
 title: Matt Hovis
-navPage: home
 permalink: /
+charts: true
 ---
+{%- set months = { "01": "Jan", "02": "Feb", "03": "Mar", "04": "Apr", "05": "May", "06": "Jun", "07": "Jul", "08": "Aug", "09": "Sep", "10": "Oct", "11": "Nov", "12": "Dec" } -%}
 
-  <!-- Hero -->
-  <header class="hero">
-    <div class="hero-content">
-      <p class="hero-eyebrow">Hi, I'm</p>
-      <h1 class="hero-name">Matt Hovis</h1>
-      <p class="hero-role">Business Analyst</p>
-      <p class="hero-tagline">
-        I turn ambiguous requests into clear requirements, validated fixes, and measurable outcomes across enterprise SaaS operations.
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap hero__grid">
+    <div class="hero__main">
+      <p class="designation">
+        <span class="designation__code">MH-26</span>
+        <span>Developer / Business analyst</span>
+        <span class="designation__loc">Atlanta, GA</span>
       </p>
-      <ul class="hero-proof" aria-label="Professional credibility highlights">
-        <li>11+ years in operations and analysis</li>
-        <li>SQL certified</li>
-        <li>Atlassian certified (Jira and Confluence)</li>
-        <li>Enterprise SaaS and service workflows</li>
-      </ul>
-      <ul class="hero-chips" aria-label="Key skills">
-        <li>Business Analysis</li>
-        <li>SQL Root Cause Analysis</li>
-        <li>Cross-Functional Delivery</li>
-      </ul>
-      <div class="hero-cta-group">
-        <a href="#work" class="btn-primary">View Work</a>
-        <a href="#contact" class="btn-outline">Get in Touch</a>
-      </div>
-    </div>
-    <div class="hero-decoration" aria-hidden="true">
-      <div class="deco-ring deco-ring--1"></div>
-      <div class="deco-ring deco-ring--2"></div>
-      <div class="deco-ring deco-ring--3"></div>
-    </div>
-  </header>
-
-  <!-- Work -->
-  <section id="work" class="section section--alt">
-    <div class="container">
-      <h2 class="section-title">Selected work</h2>
-      <p class="section-subtitle">A few examples of the kind of problems I solve and how I approach them.</p>
-
-      <div class="work-grid">
-        {% for item in work %}
-        <a href="/work/{{ item.slug }}/" class="work-card-link">
-          <article class="work-card work-card--{{ item.cardNumber }}">
-            <h3 class="work-card__title">{{ item.title }}</h3>
-            <p class="work-card__meta-line" aria-label="Project quick facts">
-              <span>{{ item.role }}</span>
-              <span>{{ item.timeframe }}</span>
-            </p>
-            <p class="work-card__metric"><strong>Impact:</strong> {{ item.metric }}</p>
-            <p class="work-card__body">{{ item.shortDesc }}</p>
-            <div class="work-card__highlights">
-              <p>{{ item.focus }}</p>
-              <p>{{ item.proof }}</p>
-            </div>
-            <span class="work-card__cta">Read more →</span>
-          </article>
-        </a>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2 class="section-title">About</h2>
-      <div class="about-grid">
-        <div class="about-text">
-          <p>
-            I'm a business analyst focused on enterprise SaaS and service operations. I translate operational ambiguity
-            into requirements teams can build, test, and release with confidence.
-          </p>
-          <p>
-            My approach combines discovery, SQL validation, and engineering collaboration to move from issue discovery to
-            measurable outcomes, including faster defect resolution and cleaner cross-team handoffs.
-          </p>
-        </div>
-        <div class="about-cards">
-          <div class="stat-card">
-            <span class="stat-icon">&#128202;</span>
-            <span class="stat-label">What I do</span>
-            <span class="stat-detail">Business analysis, workflow design, production defect resolution</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-icon">&#128295;</span>
-            <span class="stat-label">Tools</span>
-            <span class="stat-detail">SQL, Jira, Confluence, GitHub Copilot, Codex, Claude, Gemini</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-icon">&#9889;</span>
-            <span class="stat-label">Strengths</span>
-            <span class="stat-detail">Problem solving, cross-functional delivery, AI-assisted programming</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-icon">&#127970;</span>
-            <span class="stat-label">Domain</span>
-            <span class="stat-detail">Enterprise SaaS, retail/service operations, payments, scheduling</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interests -->
-  <section id="interests" class="section section--alt">
-    <div class="container">
-      <h2 class="section-title">Interests</h2>
-      <p class="section-subtitle">A few of the things that keep life interesting.</p>
-
-      <div class="interests-grid">
-
-        <!-- Video Games -->
-        <div class="interest-card interest-card--games">
-          <div class="interest-card__header">
-            <div class="interest-icon">&#127918;</div>
-            <h3>Video Games</h3>
-          </div>
-          <p>
-            I'm here for strong systems and good stories. I like digging into why games work, not just finishing them.
-          </p>
-          <ul class="interest-tags">
-            <li>RPGs</li>
-            <li>Retro Games</li>
-            <li>Game Design</li>
-          </ul>
-        </div>
-
-        <!-- Comics & Manga -->
-        <div class="interest-card interest-card--comics">
-          <div class="interest-card__header">
-            <div class="interest-icon">&#128214;</div>
-            <h3>Comics &amp; Manga</h3>
-          </div>
-          <p>
-            I read across superhero, indie, and slice-of-life. Sequential art is my favorite storytelling format.
-          </p>
-          <ul class="interest-tags">
-            <li>Manga</li>
-            <li>Superhero</li>
-            <li>Indie Comics</li>
-          </ul>
-        </div>
-
-        <!-- Gunpla -->
-        <div class="interest-card interest-card--gunpla">
-          <div class="interest-card__header">
-            <div class="interest-icon">&#9881;</div>
-            <h3>Gunpla</h3>
-          </div>
-          <p>
-            Hands-on, detail-focused, and relaxing. I'm always improving cleanup, panel lining, and display builds.
-          </p>
-          <ul class="interest-tags">
-            <li>Gundam</li>
-            <li>Panel Lining</li>
-            <li>Display Builds</li>
-          </ul>
-          <div class="gunpla-photo-container">
-            <img src="gunpla.jpg" alt="Gunpla model build" class="gunpla-photo">
-          </div>
-        </div>
-
-        <!-- Atlanta Braves -->
-        <div class="interest-card interest-card--braves">
-          <div class="interest-card__header">
-            <div class="interest-icon">&#9918;</div>
-            <h3>Atlanta Braves</h3>
-          </div>
-          <p>
-            Lifelong fan. I'm happy watching a random Tuesday game as much as a playoff run.
-          </p>
-          <ul class="interest-tags">
-            <li>Atlanta Braves</li>
-            <li>MLB</li>
-            <li>Baseball</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <div class="container container--narrow">
-      <h2 class="section-title">Get in touch</h2>
-      <p class="section-subtitle">
-        Want to connect? If it's about analytics work, collaboration, or even swapping game recs, I'm easy to reach.
+      <h1 class="hero__title" id="hero-h">Matt Hovis</h1>
+      <p class="hero__sub">Developer and business analyst. I build production software with AI coding agents.</p>
+      <p class="lede">
+        I joined a B2B SaaS company in support in 2022, became a business analyst in 2023, and started writing code
+        in February 2026. Since then I have merged <strong>1,192 pull requests</strong> in 16 repositories.
+        AI agents write most of the code. I plan each change, review it, test it, and merge it.
       </p>
-      <div class="contact-actions">
-        <a href="mailto:matt.hovis@icloud.com" class="btn-primary">Email me</a>
-        <a href="https://www.linkedin.com/in/matthewkhovis" class="btn-outline" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://github.com/MattOverbored" class="btn-outline" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <div class="cta">
+        <a class="btn btn--primary" href="#work">Case files</a>
+        <a class="btn" href="#contact">Contact</a>
       </div>
     </div>
-  </section>
+    <div class="hero__fig">
+      {% include "schematic.njk" %}
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="spec" aria-labelledby="spec-h">
+      <header class="spec__head">
+        <h2 id="spec-h">General specifications</h2>
+        <span>Unit MH-26 · as of 12 Nov 2026</span>
+      </header>
+      <dl class="spec__gauges">
+        <div class="gauge"><dt>Pull requests merged</dt><dd>1,192</dd><p>of 1,395 opened</p></div>
+        <div class="gauge"><dt>Lines merged</dt><dd>660k</dd><p>+660,728 / −103,946</p></div>
+        <div class="gauge"><dt>Test code</dt><dd>124k</dd><p>lines in 1,347 files</p></div>
+        <div class="gauge"><dt>Median open → merge</dt><dd>2.6<small>h</small></dd><p>main product repository</p></div>
+      </dl>
+      <dl class="spec__rows">
+        <div><dt>Repositories</dt><dd>16, across work, collaborations, and personal</dd></div>
+        <div><dt>Primary stack</dt><dd>PHP · Laravel · Vue · TypeScript · Swift · SQL</dd></div>
+        <div><dt>Tooling</dt><dd>Claude Code · GitHub · Jira · Confluence</dd></div>
+        <div><dt>Prior role</dt><dd>Business analyst: requirements, UAT, releases, go-lives</dd></div>
+        <div><dt>Certifications</dt><dd>SQL · Atlassian Jira and Confluence</dd></div>
+      </dl>
+    </section>
+  </div>
+</section>
+
+<section class="section" id="work" aria-labelledby="work-h">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="sec-head__tag"><span class="sec-head__num">02</span>Case files</p>
+      <h2 id="work-h">Selected work</h2>
+      <p class="sec-head__intro">2026, on a repair and service-management platform for retail chains. Client names are left out.</p>
+    </header>
+    <div class="cases">
+      {% for c in work %}
+      <article class="case panel">
+        <header class="case__bar">
+          <span class="case__id">CF-{{ "0" if loop.index < 10 }}{{ loop.index }}</span>
+          <span class="case__tag">{{ c.tag }}</span>
+          <span class="case__when">{{ c.when }}</span>
+        </header>
+        <h3 class="case__title">{{ c.title }}</h3>
+        <dl class="case__body">
+          <dt>Problem</dt><dd>{{ c.problem }}</dd>
+          <dt>Action</dt><dd>{{ c.did }}</dd>
+          <dt>Result</dt><dd class="case__result">{{ c.result }}</dd>
+        </dl>
+        <ul class="chips" aria-label="Stack">{% for s in c.stack %}<li>{{ s }}</li>{% endfor %}</ul>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="code" aria-labelledby="code-h">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="sec-head__tag"><span class="sec-head__num">03</span>Telemetry</p>
+      <h2 id="code-h">2026 in code</h2>
+      <p class="sec-head__intro">From GitHub. My first commit was on 3 February 2026. Most of the repositories are private.</p>
+    </header>
+
+    <figure class="chart panel" id="heatmap-fig">
+      <figcaption class="chart__cap">
+        <span class="chart__no">Fig. 2</span>
+        <h3>Contributions per day</h3>
+        <p>Commits, pull requests, and reviews. 3,263 in 2026, on 192 days.</p>
+      </figcaption>
+      <div class="chart__scroll"><div class="chart__plot" id="heatmap" role="img" aria-label="Calendar heatmap of GitHub contributions per day in 2026. Activity starts in February and peaks at 282 on 16 September."></div></div>
+      <div class="heat-legend" aria-hidden="true">
+        <span>Less</span><i class="h0"></i><i class="h1"></i><i class="h2"></i><i class="h3"></i><i class="h4"></i><span>More</span>
+      </div>
+    </figure>
+
+    <div class="chart-row">
+      <figure class="chart panel" id="months-fig">
+        <figcaption class="chart__cap">
+          <span class="chart__no">Fig. 3</span>
+          <h3>Pull requests opened per month</h3>
+          <p>By where the work lives.</p>
+        </figcaption>
+        <ul class="legend" aria-label="Legend">
+          <li><i class="sw sw--1"></i>Day job</li>
+          <li><i class="sw sw--2"></i>Collaborations</li>
+          <li><i class="sw sw--3"></i>Personal</li>
+        </ul>
+        <div class="chart__plot" id="months" role="img" aria-label="Stacked bar chart of pull requests opened per month, February to November 2026. Peak in July with 442."></div>
+        <details class="table-view">
+          <summary>Show as table</summary>
+          <table>
+            <thead><tr><th scope="col">Month</th><th scope="col">Day job</th><th scope="col">Collaborations</th><th scope="col">Personal</th></tr></thead>
+            <tbody>
+              {% for m, v in stats.prsByMonth %}
+              <tr><th scope="row">{{ months[m.slice(5)] }}</th><td>{{ v.work or 0 }}</td><td>{{ v.collab or 0 }}</td><td>{{ v.personal or 0 }}</td></tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </details>
+      </figure>
+
+      <figure class="chart panel" id="langs-fig">
+        <figcaption class="chart__cap">
+          <span class="chart__no">Fig. 4</span>
+          <h3>Lines added by language</h3>
+          <p>Merged pull requests, code files only. A minimum: counts read the first 100 files of each PR.</p>
+        </figcaption>
+        <div class="chart__plot" id="langs" role="img" aria-label="Bar chart of lines added by language. PHP leads with about 281 thousand, then JavaScript, Swift, Vue, TypeScript, Kotlin, HTML, and CSS."></div>
+        <details class="table-view">
+          <summary>Show as table</summary>
+          <table>
+            <thead><tr><th scope="col">Language</th><th scope="col">Lines added</th></tr></thead>
+            <tbody>{% for l in stats.languages %}<tr><th scope="row">{{ l[0] }}</th><td>{{ l[1] }}</td></tr>{% endfor %}</tbody>
+          </table>
+        </details>
+      </figure>
+    </div>
+
+    <ul class="readouts">
+      <li><span class="readouts__k">Streak</span><strong>19 days</strong><span>in a row with a merged PR, 29 Jun – 17 Jul</span></li>
+      <li><span class="readouts__k">Peak day</span><strong>83 merges</strong><span>on 17 September</span></li>
+      <li><span class="readouts__k">Tickets</span><strong>417</strong><span>named in PR titles on the main product</span></li>
+      <li><span class="readouts__k">Commits</span><strong>3,582</strong><span>across 11,821 changed files</span></li>
+    </ul>
+  </div>
+  <script type="application/json" id="stats-data">{{ stats | dump | safe }}</script>
+</section>
+
+<section class="section" id="projects" aria-labelledby="projects-h">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="sec-head__tag"><span class="sec-head__num">04</span>Hangar</p>
+      <h2 id="projects-h">Side projects</h2>
+    </header>
+    <div class="projects">
+      {% for p in projects %}
+      <article class="project panel{% if p.featured %} project--featured{% endif %}">
+        <p class="project__bar"><span>Unit {{ "0" if loop.index < 10 }}{{ loop.index }}</span><span>{{ p.kind }}</span></p>
+        <h3>{{ p.name }}</h3>
+        <p class="project__blurb">{{ p.blurb }}</p>
+        <ul class="chips" aria-label="Stack">{% for s in p.stack %}<li>{{ s }}</li>{% endfor %}</ul>
+        {% if p.links.length %}
+        <p class="project__links">{% for l in p.links %}<a href="{{ l.href }}"{% if l.href.startsWith('http') %} rel="noopener"{% endif %}>{{ l.label }} <span aria-hidden="true">→</span></a>{% endfor %}</p>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="career" aria-labelledby="career-h">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="sec-head__tag"><span class="sec-head__num">05</span>Service record</p>
+      <h2 id="career-h">Career</h2>
+    </header>
+    <ol class="record">
+      {% for j in career %}
+      <li class="record__item{% if loop.first %} is-current{% endif %}">
+        <p class="record__rev">Rev {{ "0" if (career.length - loop.index0) < 10 }}{{ career.length - loop.index0 }}</p>
+        <p class="record__when">{{ j.when }}</p>
+        <div class="record__body">
+          <h3>{{ j.role }}</h3>
+          <p class="record__org">{{ j.org }}</p>
+          <p>{{ j.body }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+    <div class="creds">
+      <h3>Certifications and study</h3>
+      <ul>
+        <li>SQL certificate, 2022</li>
+        <li>Atlassian: Jira Service Management, Jira, and Confluence fundamentals</li>
+        <li>Working toward a Bachelor of Applied Science</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about" aria-labelledby="about-h">
+  <div class="wrap about">
+    <div>
+      <header class="sec-head">
+        <p class="sec-head__tag"><span class="sec-head__num">06</span>Operator</p>
+        <h2 id="about-h">Outside work</h2>
+      </header>
+      <dl class="spec__rows spec__rows--single">
+        <div><dt>Video games</dt><dd>RPGs and retro games</dd></div>
+        <div><dt>Comics and manga</dt><dd>Superhero, indie, and slice-of-life</dd></div>
+        <div><dt>Gunpla</dt><dd>Model kits, built and panel-lined</dd></div>
+        <div><dt>Baseball</dt><dd>Atlanta Braves</dd></div>
+      </dl>
+    </div>
+    <figure class="photo">
+      <div class="photo__frame">
+        <img src="/gunpla-sm.jpg" alt="A finished white, blue, and red model kit standing next to a tabby cat" loading="lazy" width="900" height="1200" />
+      </div>
+      <figcaption><span class="chart__no">Fig. 5</span> A finished kit, and my cat.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section section--alt" id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="sec-head__tag"><span class="sec-head__num">07</span>Comms</p>
+      <h2 id="contact-h">Contact</h2>
+      <p class="sec-head__intro">Email is the best way to reach me.</p>
+    </header>
+    <ul class="comms">
+      <li><a href="mailto:matt.hovis@icloud.com"><span class="comms__ch">CH-1</span><span class="comms__k">Email</span><span class="comms__v">matt.hovis@icloud.com</span><span class="comms__go" aria-hidden="true">→</span></a></li>
+      <li><a href="https://www.linkedin.com/in/matthewkhovis" rel="noopener"><span class="comms__ch">CH-2</span><span class="comms__k">LinkedIn</span><span class="comms__v">in/matthewkhovis</span><span class="comms__go" aria-hidden="true">→</span></a></li>
+      <li><a href="https://github.com/mattkhovis" rel="noopener"><span class="comms__ch">CH-3</span><span class="comms__k">GitHub</span><span class="comms__v">mattkhovis</span><span class="comms__go" aria-hidden="true">→</span></a></li>
+    </ul>
+  </div>
+</section>
