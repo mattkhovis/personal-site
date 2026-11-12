@@ -247,6 +247,9 @@ strong { font-weight: 600; }
 .lede { font-size: 16.5px; line-height: 1.65; color: var(--ink-2); max-width: 60ch; margin-bottom: 28px; }
 .lede strong { color: var(--ink); }
 
+.notfound { min-height: 62vh; display: grid; align-content: center; }
+.notfound .hero__title { font-size: clamp(56px, 10vw, 128px); max-width: 12ch; }
+
 /* ---------- Fig. 1 schematic ---------- */
 .fig1 { margin: 0; background: color-mix(in srgb, var(--surface) 92%, transparent); border: 1px solid var(--line); position: relative; }
 .fig1::before, .fig1::after {

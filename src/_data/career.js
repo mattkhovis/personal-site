@@ -34,15 +34,15 @@ module.exports = [
     body: "Sales grew 50% year over year. The store ranked in the company's top three on KPIs.",
   },
   {
-    when: "2014 – 2019",
-    role: "Assistant Store Manager, Online Sales",
-    org: "Video game retailer",
-    body: "Built the store's online sales channel. Online sales grew 75% a year for three years.",
-  },
-  {
     when: "2016 – now",
     role: "Owner",
     org: "Top-rated eBay store",
     body: "Inventory, listings, customer service, and shipping. 100% positive feedback since 2016.",
+  },
+  {
+    when: "2014 – 2019",
+    role: "Assistant Store Manager, Online Sales",
+    org: "Video game retailer",
+    body: "Built the store's online sales channel. Online sales grew 75% a year for three years.",
   },
 ];

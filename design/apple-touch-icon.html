@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+  Source for src/apple-touch-icon.png (180x180, iOS home screen). iOS rounds the corners, so no transparency.
+  Re-render:
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars \
+    --window-size=180,180 --virtual-time-budget=6000 \
+    --screenshot=src/apple-touch-icon.png "file://$PWD/design/apple-touch-icon.html"
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=block" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 180px; height: 180px; overflow: hidden; background: #1d5bbf; }
+  body { position: relative; display: grid; place-items: center; }
+  .mh { font: 700 86px/1 "Barlow Condensed", sans-serif; color: #fff; letter-spacing: 0.03em; margin-top: -10px; }
+  .bar { position: absolute; left: 0; right: 0; bottom: 0; height: 22px;
+    background: linear-gradient(90deg, #c9302c 0 64%, #f2b705 64% 100%); }
+  .tick { position: absolute; top: 18px; left: 18px; width: 22px; height: 22px; border-left: 4px solid rgba(255,255,255,.55); border-top: 4px solid rgba(255,255,255,.55); }
+</style>
+</head>
+<body>
+  <span class="tick"></span>
+  <span class="mh">MH</span>
+  <span class="bar"></span>
+</body>
+</html>
