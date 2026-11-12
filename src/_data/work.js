@@ -1,71 +1,90 @@
+// Selected work. Client, employer, vendor, and colleague names are left out on purpose.
+// Each item is taken from the pull request description or the work portfolio. Do not add claims they do not support.
 module.exports = [
   {
-    id: "ai-assisted-defect-resolution",
-    slug: "ai-assisted-defect-resolution",
-    title: "AI Defect Resolution",
-    shortDesc: "Resolved production defects across payment, inventory, and API workflows using SQL validation and AI-assisted engineering support.",
-    cardNumber: 1,
-    role: "Business Analyst",
-    timeframe: "2023-Present",
-    metric: "Dozens of production defects resolved",
-    focus: "Root-cause analysis across payment, inventory, and API defects.",
-    proof: "Reduced repeat production issues in multi-location workflows.",
-    problem: "Critical defects in payment plans, inventory status, and third-party API flows were causing failed transactions and workflow loops.",
-    solution: "Used SQL root-cause analysis and AI-assisted pair programming to isolate defects, validate fixes, and collaborate with engineering on targeted code changes.",
-    outcome: "Stabilized production workflows, reduced repeat incidents, and improved confidence in multi-location operations.",
-    details: "Created a repeatable defect-resolution workflow that starts with SQL validation, maps system behavior against real-world process flow, and uses AI coding tools in VS Code to accelerate investigation and fix design. This approach improved issue turnaround while maintaining traceability through Jira and Confluence.",
-    impact: [
-      "Resolved issues spanning payments, inventory, and API integrations",
-      "Reduced recurrence through better root-cause validation",
-      "Improved cross-team handoffs from issue report to deployed fix"
-    ],
-    tools: ["SQL", "Root Cause Analysis", "GitHub Copilot", "Codex", "Jira"],
-    context: "Business Analyst at ServiceCentral Technologies"
+    tag: "Integration fix",
+    title: "Retry loop in a phone maker's warranty integration",
+    when: "Sep 2026",
+    problem:
+      "The manufacturer rejected repair status updates, and our system resent them without limit. In 7 days, 2,241 of 2,873 calls failed (78%). One ticket sent 161 calls in 4.8 days.",
+    did:
+      "Found the cause: a rejected update forced a rollback, the rollback left the inbound queue message open, and the queue delivered it again. Replaced a five-part fix with one check: retry only on known temporary faults.",
+    result: "A rejected update is now recorded once and the ticket saves.",
+    stack: ["PHP", "Message queues", "Root-cause analysis"],
   },
   {
-    id: "workflow-standardization-and-uat",
-    slug: "workflow-standardization-and-uat",
-    title: "Workflow Standardization",
-    shortDesc: "Standardized workflows, stories, and acceptance criteria to improve delivery quality and reduce operational rework.",
-    cardNumber: 2,
-    role: "Business Analyst",
-    timeframe: "2024-Present",
-    metric: "Clearer handoffs and more reliable UAT",
-    focus: "Standardized user stories, specs, and acceptance criteria.",
-    proof: "Improved UAT consistency and reduced release-cycle rework.",
-    problem: "Business requests were translated inconsistently, causing ambiguity during development, testing, and rollout.",
-    solution: "Defined user stories, functional specs, and acceptance criteria with shared workflow definitions across Product, Development, QA, and Support.",
-    outcome: "Cleaner ticket quality, smoother UAT cycles, and more predictable releases.",
-    details: "Led discovery and alignment sessions with enterprise clients and internal teams, then translated findings into implementation-ready artifacts. Standardized delivery process in Jira and Confluence so priority, scope, and validation criteria stayed visible throughout execution.",
-    impact: [
-      "Reduced ambiguity between stakeholder request and engineering execution",
-      "Improved release confidence with clearer acceptance criteria",
-      "Strengthened post-launch stabilization and adoption support"
-    ],
-    tools: ["Jira", "Confluence", "Agile", "UAT Coordination"],
-    context: "Business Analyst at ServiceCentral Technologies"
+    tag: "Integration",
+    title: "Parts-invoice ledger for warranty repairs",
+    when: "Nov 2026",
+    problem:
+      "A retailer gets paid for a warranty part only when the part line sent to the manufacturer has the correct invoice number. Our system did not send one.",
+    did:
+      "Added a ledger integration. The system gets one invoice number for each part unit, sends it on the part line, and releases that exact invoice when a part is removed or a ticket is cancelled. Off by default, on per location.",
+    result: "The retailer can bill the manufacturer for each part.",
+    stack: ["PHP", "MySQL", "REST API"],
   },
   {
-    id: "operations-rollout-and-scale",
-    slug: "operations-rollout-and-scale",
-    title: "Operations Scale",
-    shortDesc: "Delivered high-impact operational programs across payments, scheduling, and service workflows in retail and SaaS environments.",
-    cardNumber: 3,
-    role: "Operations Leadership",
-    timeframe: "2014-2022",
-    metric: "225% YoY repair growth",
-    focus: "Scaled payment, scheduling, and service operations programs.",
-    proof: "Grew teams, improved throughput, and increased data accuracy.",
-    problem: "Teams needed scalable operational processes for closing, payments, scheduling, and service delivery across multiple locations.",
-    solution: "Designed and rolled out POS closing/deposit workflow, payment device implementation, online appointment booking, and team training programs.",
-    outcome: "Higher data accuracy, faster transactions, better customer experience, and improved throughput at scale.",
-    details: "Combined frontline operations experience with business analysis discipline to deliver practical workflows that teams actually adopt. Supported rollout planning, training, and post-launch stabilization to ensure improvements stayed durable in production.",
-    impact: [
-      "Grew service team from 10 to over 80 technicians",
-      "Increased repairs YoY by 225% in service center operations",
-      "Delivered 50% YoY sales growth through customer-focused execution"
-    ],
-    tools: ["Process Design", "Rollout Planning", "Training", "Operational QA"],
-    context: "Business Analyst and Operations Leader"
-  }
+    tag: "Integration fix",
+    title: "Ready-for-pickup updates that failed 35% of the time",
+    when: "Oct 2026",
+    problem:
+      "Stores got an error when they moved a device-maker repair to Ready for Pickup. In 60 days, 1,254 of 3,572 updates failed and the ticket save stopped.",
+    did:
+      "Showed with a production query that the cause was not the serial numbers, as the error said. The update was sent after the repair was already complete. Now, when that happens, the system checks the repair status and continues.",
+    result: "Stores can finish the ticket. The error email for this case stopped.",
+    stack: ["PHP", "SQL", "API debugging"],
+  },
+  {
+    tag: "New platform",
+    title: "Customers MVP on the rebuilt platform",
+    when: "Aug – Nov 2026",
+    problem: "The company is rebuilding its product from scratch. The first release needed a defined scope.",
+    did:
+      "Wrote the 21 MVP epics for the backlog. Built much of the Customers epic: an append-only customer ledger with reversals, credit limits, and reconciliation, plus audit trail, notes, duplicate merge, and location scoping.",
+    result: "Customers MVP (48 tickets) certified for release 2.0 on 10 November 2026.",
+    stack: ["Laravel", "Vue", "TypeScript"],
+  },
+  {
+    tag: "Tax and payments",
+    title: "Tax engine and a payment-provider contract for the new POS",
+    when: "Jul – Nov 2026",
+    problem:
+      "The new POS had no tax engine and no card payment contract. Nothing defined what a timeout, an unknown result, or a duplicate request should do.",
+    did:
+      "Built tax with dated rates, inclusive and exclusive pricing, exemption certificates, an audit trail, and filing reports. Then wrote one provider contract and payment state machine, with idempotency keys so a duplicate request makes no second charge.",
+    result: "A new payment provider plugs in without POS changes.",
+    stack: ["Laravel", "PHP", "Domain design"],
+  },
+  {
+    tag: "Enterprise RFP",
+    title: "Four RFP demo modules, after an audit showed none could ship",
+    when: "Jun – Jul 2026",
+    problem:
+      "The tracker showed four demo features for an enterprise RFP as nearly done. I checked the code against the tickets. None of the four could ship.",
+    did:
+      "Re-planned all four, then built them: workforce management (8 screens and a reporting engine), a document vault, a customer-feedback module, and a kiosk. Ported each to the new platform.",
+    result: "The demo went ahead on 21 July 2026.",
+    stack: ["PHP", "Laravel", "Vue"],
+  },
+  {
+    tag: "Security",
+    title: "Customer records open across locations",
+    when: "Oct 2026",
+    problem:
+      "On the new platform, with restricted sharing on, a user could open, edit, or delete a customer at any location by ID. Search and lists also returned every location.",
+    did:
+      "Moved the access rule into one place, matched the old system's behavior, and added middleware that returns 404 for out-of-scope and missing customers alike, so the response does not confirm a record exists.",
+    result: "Users see only customers at their locations. Also fixed an SQL injection risk in an inventory import.",
+    stack: ["Laravel", "Authorization"],
+  },
+  {
+    tag: "Agent tooling",
+    title: "Ticket-to-pull-request pipeline",
+    when: "2026",
+    problem: "I was opening hundreds of small changes. I needed each one planned and tested the same way.",
+    did:
+      "Built a pipeline in which one AI worker takes a ticket from plan to a ready pull request and stops for my review and merge. Required an acceptance test on every pull request an agent opens. Built 21 client and testing agents.",
+    result: "Used for the Customers MVP tickets.",
+    stack: ["Claude Code", "Agents", "CI"],
+  },
 ];
