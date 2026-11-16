@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta name="robots" content="index">
+<title>Support · Shiplog</title>
+<style>
+  :root { color-scheme: light dark; --bg:#F6F1E6; --ink:#16222C; --dim:#45535E; --rule:#DCD3C2; --accent:#A4492A }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0B1620; --ink:#EBDFC6; --dim:#A9B7BF; --rule:#2B4558; --accent:#E07A4B } }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.6 -apple-system, "Segoe UI", system-ui, sans-serif }
+  main { max-width: 68ch; margin: 0 auto; padding: 40px 20px 64px }
+  .eyebrow { font-size:.75rem; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin:0 }
+  h1 { font-size:2rem; margin:.2rem 0 .4rem }
+  h2 { font-size:1.15rem; margin:2rem 0 .5rem; padding-top:1.2rem; border-top:1px solid var(--rule) }
+  section:first-of-type h2 { border-top:0; padding-top:0 }
+  p, li { color:var(--dim) } b { color:var(--ink) }
+  a { color:var(--accent) }
+  ul { padding-left:1.2rem } li { margin:.4rem 0 }
+</style>
+</head>
+<body>
+<main>
+<p class="eyebrow">Shiplog</p>
+<h1>Support</h1>
+<p>Shiplog keeps a ship's log for your code: your commits, merges and CI weather from GitHub, written up each day,
+with room for your own notes. It's for iPhone and iPad. There's no account and nothing to sign in to.</p>
+
+<section>
+<h2>Get help</h2>
+<p>Email <a href="mailto:matt.hovis@icloud.com">matt.hovis@icloud.com</a> with what happened, what device you're on,
+and which repository you were looking at if it's public. Bug reports, ideas and questions are all welcome.</p>
+</section>
+
+<section>
+<h2>Common questions</h2>
+<ul>
+<li><b>Do I need a GitHub token?</b> Not for public repositories: their name is enough. A token lets Shiplog read
+private ones, and raises GitHub's limit from 60 requests an hour to 5,000. A fine-grained token with read-only
+Contents, Pull requests and Actions is all it needs. Add it in the Harbour, under GitHub lookout.</li>
+<li><b>It says "Out of GitHub requests for now".</b> Without a token GitHub allows 60 requests an hour, and a first
+sail can use a dozen or more per repository. Shiplog says when the limit resets; a token lifts it.</li>
+<li><b>It says it couldn't find my repository.</b> Check it's written as owner/repo. If it's private, add a token
+that can see it.</li>
+<li><b>What do ports, squalls and whales mean?</b> A port is a merged pull request, a squall is CI turning red, and
+the white whale is the one stubborn bug you're chasing. The Harbour's articles explain every word, and Easier
+reading & fittings › Plain words swaps them for ordinary ones.</li>
+<li><b>Is my log backed up?</b> It lives on your device. The Harbour can back up every ship to a file, export the
+whole log as Markdown, and, where iCloud is offered, keep your own words on your other devices.</li>
+<li><b>Does Shiplog collect any data?</b> No. See the <a href="/shiplog/privacy/">privacy policy</a> for the full
+answer.</li>
+</ul>
+</section>
+</main>
+</body>
+</html>

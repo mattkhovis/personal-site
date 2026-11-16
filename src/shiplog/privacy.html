@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta name="robots" content="index">
+<title>Privacy · Shiplog</title>
+<style>
+  :root { color-scheme: light dark; --bg:#F6F1E6; --ink:#16222C; --dim:#45535E; --rule:#DCD3C2; --accent:#A4492A }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0B1620; --ink:#EBDFC6; --dim:#A9B7BF; --rule:#2B4558; --accent:#E07A4B } }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.6 -apple-system, "Segoe UI", system-ui, sans-serif }
+  main { max-width: 68ch; margin: 0 auto; padding: 40px 20px 64px }
+  .eyebrow { font-size:.75rem; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin:0 }
+  h1 { font-size:2rem; margin:.2rem 0 .4rem }
+  h2 { font-size:1.15rem; margin:2rem 0 .5rem; padding-top:1.2rem; border-top:1px solid var(--rule) }
+  section:first-of-type h2 { border-top:0; padding-top:0 }
+  p, li { color:var(--dim) } b { color:var(--ink) }
+  a { color:var(--accent) }
+  ul { padding-left:1.2rem } li { margin:.4rem 0 }
+  .small { font-size:.85rem }
+</style>
+</head>
+<body>
+<main>
+<p class="eyebrow">Shiplog</p>
+<h1>Privacy</h1>
+<p class="small">Last updated 2026-11-16</p>
+
+<section>
+<h2>The short version</h2>
+<p>Shiplog is a journal for software developers: it reads activity from GitHub and keeps it, with your own notes, on
+your device. <b>There is no account, no server of Shiplog's own, no analytics, no advertising and no tracking.
+Nothing you do in Shiplog is sent to its developer.</b></p>
+</section>
+
+<section>
+<h2>What Shiplog keeps, and where</h2>
+<ul>
+<li><b>Your log</b>: the repositories you follow, the GitHub activity Shiplog has read for them, and everything you
+write (notes, courses, stars, tags, whales and their harpoons) is saved in Shiplog's own storage on your device.</li>
+<li><b>Photos you attach to notes</b> stay on the device where you attached them. They aren't sent to GitHub or to
+iCloud, and leave the device only inside a backup file you make and share yourself.</li>
+<li><b>Your GitHub token</b>, if you add one, is kept in your device's Keychain, readable only by Shiplog on that
+device, and sent only to GitHub with Shiplog's own requests. Remove it at any time in the Harbour.</li>
+<li><b>Your settings</b> (reading preferences, which tips you've seen and the like) are saved on your device.</li>
+</ul>
+</section>
+
+<section>
+<h2>Who Shiplog talks to</h2>
+<ul>
+<li><b>GitHub.</b> To fill your log, Shiplog asks GitHub's API (api.github.com) about the repositories you name:
+their commits, pull requests, workflow runs, issues, and the GitHub account names behind them. The requests go
+straight from your device to GitHub, with your token if you've added one. GitHub's
+<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">privacy statement</a>
+covers what GitHub does with them.</li>
+<li><b>Your own iCloud, if you turn it on.</b> Shiplog can keep what you've written (notes, courses, stars, whales
+and the list of repositories you follow) in your private iCloud database, so it's on your other devices too. Apple
+holds it for you; Shiplog's developer can't see it. What GitHub already knows isn't stored there: each device asks
+GitHub itself. Switch it off in the Harbour, under Kept ashore.</li>
+</ul>
+<p>Shiplog sends nothing to anyone else. It contains no third-party code for analytics, advertising, crash reporting
+or tracking, and its privacy manifest, which Apple reads, declares that it collects nothing and tracks nothing.</p>
+</section>
+
+<section>
+<h2>Notifications, widgets, Siri and Spotlight</h2>
+<p>The evening reminder and CI alerts are local notifications, scheduled and shown by your device. If you allow it,
+Shiplog checks GitHub in the background so they stay current. Widgets and Spotlight show your log from data kept on
+your device, and Siri and Shortcuts actions run in Shiplog on your device.</p>
+</section>
+
+<section>
+<h2>Your choices</h2>
+<ul>
+<li><b>Remove your GitHub token</b>: the Harbour, under GitHub lookout.</li>
+<li><b>Remove a repository and everything logged for it</b>: when you follow more than one, press and hold it in the
+Harbour's fleet and choose Strike from the fleet.</li>
+<li><b>Clear everything</b>: the Harbour, Start a fresh sample voyage. If iCloud is on, this clears it there too.</li>
+<li><b>Remove everything from a device</b>: delete the app, and its log and photos go with it. iOS may keep the
+Keychain token until you remove it in the Harbour first.</li>
+<li><b>Remove what's in iCloud</b>: Settings › your name › iCloud › Manage Account Storage › Shiplog.</li>
+<li>Nothing is sold, and nothing is used for advertising.</li>
+</ul>
+</section>
+
+<section>
+<h2>Children</h2>
+<p>Shiplog isn't directed at children, and collects no personal information from anyone.</p>
+</section>
+
+<section>
+<h2>Changes</h2>
+<p>If Shiplog starts keeping or sending something new, this page changes before the app does, and the date at the
+top changes with it.</p>
+</section>
+
+<section>
+<h2>Contact</h2>
+<p>Shiplog is made by Matt Hovis. Questions about this policy, or about anything the app keeps:
+<a href="mailto:matt.hovis@icloud.com">matt.hovis@icloud.com</a>.</p>
+</section>
+</main>
+</body>
+</html>
